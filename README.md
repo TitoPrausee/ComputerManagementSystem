@@ -46,10 +46,4 @@ Hier sind einige User Stories, die den Anforderungen an die Software entsprechen
 4. **Als Administrator möchte ich eine Übersicht über alle PCs im Unternehmen haben, um schnell auf Informationen zugreifen zu können.**
 5. **Als Administrator möchte ich die Möglichkeit haben, nach spezifischen Hardware-Komponenten zu filtern, um gezielt Informationen zu erhalten.**
 
-## Installation
 
-Um das Projekt lokal auszuführen, befolgen Sie bitte die folgenden Schritte:
-
-1. Klonen Sie das Repository:
-   ```bash
-   git clone https://github.com/IhrBenutzername/Computerverwaltung.git
