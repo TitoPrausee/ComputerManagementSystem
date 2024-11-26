@@ -2,15 +2,8 @@
 {
     partial class ManagementForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,12 +13,6 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.btnUser Management = new System.Windows.Forms.Button();
@@ -89,11 +76,13 @@
             this.ResumeLayout(false);
         }
 
-        #endregion
+        #region Windows Form Designer generated code
 
-        private System.Windows.Forms.Button btnUser Management;
-        private System.Windows.Forms.Button btnPCManagement;
-        private System.Windows.Forms.DataGridView dgvUsers;
-        private System.Windows.Forms.DataGridView dgvPCs;
+        private System.Windows.Forms.Button btnUser Management; // Button für Benutzerverwaltung
+        private System.Windows.Forms.Button btnPCManagement; // Button für PC-Verwaltung
+        private System.Windows.Forms.DataGridView dgvUsers; // DataGridView für Benutzer
+        private System.Windows.Forms.DataGridView dgvPCs; // DataGridView für PCs
+
+        #endregion
     }
 }

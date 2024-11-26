@@ -7,7 +7,8 @@ namespace ComputerManagementSystem
 {
     public class Database
     {
-        private string connectionString = "server=localhost;uid=root;database=projekt 3;";
+        // Verbindung zur Datenbank (bitte die Datenbankdetails anpassen)
+        private string connectionString = "server=localhost;uid=root;database=projekt3;";
 
         public void Connect()
         {
