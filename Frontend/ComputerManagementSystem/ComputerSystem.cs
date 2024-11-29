@@ -1,17 +1,13 @@
-using System;
-
-namespace ComputerManagementSystem
+public class ComputerSystem
 {
-    public class ComputerSystem
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string IPAddress { get; set; }
-        public string OperatingSystem { get; set; }
-        public DateTime LastUpdated { get; set; }
-        public string Motherboard { get; set; }
-        public string GPU { get; set; }
-        public int RAM { get; set; }
-        public int Storage { get; set; }
-    }
+    public string CpuName { get; set; }
+    public string CpuProcessorId { get; set; }
+    public string HddSerialNumber { get; set; }
+    public string HddCapacity { get; set; }
+    public string HddType { get; set; }
+    public string RamSerialNumber { get; set; }
+    public string RamSize { get; set; }
+    public string MotherboardSerial { get; set; }
+    public string GpuName { get; set; }
+    public string MonitorPort { get; set; }
 }

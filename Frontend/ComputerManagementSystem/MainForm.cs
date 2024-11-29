@@ -18,33 +18,36 @@ namespace ComputerManagementSystem
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("Willkommen im Computer Management System!", "Willkommen", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadComputerSystems();
         }
-
         private void LoadComputerSystems()
         {
             try
             {
-                // Stelle sicher, dass die richtige Klasse verwendet wird
-                List<ComputerManagementSystem.ComputerSystem> systems = dbOperations.GetComputerSystems();
-                listViewComputerSystems.Items.Clear(); // Clear existing items
+                MessageBox.Show("Lade Daten, bitte warten...", "Laden", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                List<ComputerSystem> systems = dbOperations.GetHardwareInfo();
+                listViewComputerSystems.Items.Clear(); // Alte Einträge löschen
 
                 foreach (var system in systems)
                 {
-                    ListViewItem item = new ListViewItem(system.Name);
-                    item.SubItems.Add(system.IPAddress);
-                    item.SubItems.Add(system.OperatingSystem);
-                    item.SubItems.Add(system.LastUpdated.ToString());
-                    item.SubItems.Add(system.Motherboard);
-                    item.SubItems.Add(system.GPU);
-                    item.SubItems.Add(system.RAM.ToString());
-                    item.SubItems.Add(system.Storage.ToString());
+                    ListViewItem item = new ListViewItem(system.CpuName);
+                    item.SubItems.Add(system.CpuProcessorId);
+                    item.SubItems.Add(system.HddSerialNumber);
+                    item.SubItems.Add(system.HddCapacity);
+                    item.SubItems.Add(system.HddType);
+                    item.SubItems.Add(system.RamSerialNumber);
+                    item.SubItems.Add(system.RamSize);
+                    item.SubItems.Add(system.MotherboardSerial);
+                    item.SubItems.Add(system.GpuName);
+                    item.SubItems.Add(system.MonitorPort);
                     listViewComputerSystems.Items.Add(item);
                 }
+                MessageBox.Show("Daten erfolgreich geladen.", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Fehler beim Laden der Daten: " + ex.Message);
+                MessageBox.Show("Fehler beim Laden der Daten: " + ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

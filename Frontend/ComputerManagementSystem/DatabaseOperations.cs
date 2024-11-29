@@ -1,6 +1,7 @@
 ﻿using Npgsql; // Verwenden Sie Npgsql für PostgreSQL
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ComputerManagementSystem
 {
@@ -8,10 +9,10 @@ namespace ComputerManagementSystem
     {
         private string connectionString = "Host=217.160.76.103;Port=5432;Database=jomi;Username=jomi;Password=init123$;";
 
-        public List<ComputerSystem> GetComputerSystems()
+        public List<ComputerSystem> GetHardwareInfo()
         {
             List<ComputerSystem> systems = new List<ComputerSystem>();
-            string query = "SELECT Id, Name, IPAddress, OperatingSystem, LastUpdated, Motherboard, GPU, RAM, Storage FROM ComputerSystems";
+            string query = "SELECT cpu_name, cpu_processor_id, hdd_serial_number, hdd_capacity, hdd_type, ram_serial_number, ram_size, motherboard_serial, gpu_name, monitor_port FROM hardware_info";
 
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
@@ -26,28 +27,30 @@ namespace ComputerManagementSystem
                             {
                                 ComputerSystem system = new ComputerSystem
                                 {
-                                    Id = reader.GetInt32(0),
-                                    Name = reader.GetString(1),
-                                    IPAddress = reader.GetString(2),
-                                    OperatingSystem = reader.GetString(3),
-                                    LastUpdated = reader.GetDateTime(4),
-                                    Motherboard = reader.GetString(5),
-                                    GPU = reader.GetString(6),
-                                    RAM = reader.GetInt32(7),
-                                    Storage = reader.GetInt32(8)
+                                    CpuName = reader.GetString(0),
+                                    CpuProcessorId = reader.GetString(1),
+                                    HddSerialNumber = reader.GetString(2),
+                                    HddCapacity = reader.GetString(3),
+                                    HddType = reader.GetString(4),
+                                    RamSerialNumber = reader.GetString(5),
+                                    RamSize = reader.GetString(6),
+                                    MotherboardSerial = reader.GetString(7),
+                                    GpuName = reader.GetString(8),
+                                    MonitorPort = reader.GetString(9)
                                 };
                                 systems.Add(system);
                             }
                         }
                     }
+                    MessageBox.Show("Daten erfolgreich geladen.", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (NpgsqlException ex)
                 {
-                    Console.WriteLine("PostgreSQL Fehler: " + ex.Message);
+                    MessageBox.Show("Fehler beim Abrufen der Daten: " + ex.Message, "Datenbankfehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Allgemeiner Fehler: " + ex.Message);
+                    MessageBox.Show("Allgemeiner Fehler: " + ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
