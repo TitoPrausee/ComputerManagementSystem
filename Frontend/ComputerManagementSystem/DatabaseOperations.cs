@@ -1,25 +1,26 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Npgsql; // Verwenden Sie Npgsql für PostgreSQL
 using System;
 using System.Collections.Generic;
 
 public class DatabaseOperations
 {
-    // Korrigierte Verbindungszeichenfolge
-    private string connectionString = "Server=localhost;Database=computermanagementsystem;Uid=Tiberius;Pwd=123456;";
+    // Korrigierte Verbindungszeichenfolge für PostgreSQL
+    private string connectionString = "Host=217.160.76.103;Port=5432;Database=jomi;Username=jomi;Password=your_password;";
 
+    // Methode zum Abrufen von ComputerSystemen
     public List<ComputerSystem> GetComputerSystems()
     {
         List<ComputerSystem> systems = new List<ComputerSystem>();
         string query = "SELECT Id, Name, IPAddress, OperatingSystem, LastUpdated, Motherboard, GPU, RAM, Storage FROM ComputerSystems";
 
-        using (MySqlConnection connection = new MySqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             try
             {
                 connection.Open();
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    using (NpgsqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -40,10 +41,10 @@ public class DatabaseOperations
                     }
                 }
             }
-            catch (MySqlException ex)
+            catch (NpgsqlException ex)
             {
-                // Fehlerbehandlung für MySQL-spezifische Fehler
-                Console.WriteLine("MySQL Fehler: " + ex.Message);
+                // Fehlerbehandlung für PostgreSQL-spezifische Fehler
+                Console.WriteLine("PostgreSQL Fehler: " + ex.Message);
             }
             catch (Exception ex)
             {
@@ -58,31 +59,32 @@ public class DatabaseOperations
     // Methode zur Authentifizierung eines Benutzers
     public User AuthenticateUser(string username, string password)
     {
-        using (MySqlConnection connection = new MySqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
 
-            string query = "SELECT * FROM users WHERE username = @username AND password = @password";
+            // Verwenden Sie Parameter, um SQL-Injection zu vermeiden
+            string query = "SELECT Id, Username FROM users WHERE username = @username AND password = @password";
 
-            using (MySqlCommand command = new MySqlCommand(query, connection))
+            using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@username", username);
                 command.Parameters.AddWithValue("@password", password); // Beachte: Passwörter sollten gehasht gespeichert werden!
 
-                using (MySqlDataReader reader = command.ExecuteReader())
+                using (NpgsqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())
                     {
                         return new User
                         {
                             Id = reader.GetInt32(0),
-                            Username = reader.GetString(1),
-                            Password = reader.GetString(2) // Passwörter sollten nicht zurückgegeben werden!
+                            Username = reader.GetString(1)
+                            // Passwörter sollten nicht zurückgegeben werden!
                         };
                     }
                     else
                     {
-                        return null;
+                        return null; // Benutzer nicht gefunden
                     }
                 }
             }
@@ -95,5 +97,19 @@ public class User
 {
     public int Id { get; set; }
     public string Username { get; set; }
-    public string Password { get; set; } // Beachte: Passwörter sollten nicht in der Anwendung gespeichert werden!
+    // Passwörter sollten nicht in der Anwendung gespeichert werden!
+}
+
+// ComputerSystem-Klasse
+public class ComputerSystem
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string IPAddress { get; set; }
+    public string OperatingSystem { get; set; }
+    public DateTime LastUpdated { get; set; }
+    public string Motherboard { get; set; }
+    public string GPU { get; set; }
+    public int RAM { get; set; }
+    public int Storage { get; set; }
 }
