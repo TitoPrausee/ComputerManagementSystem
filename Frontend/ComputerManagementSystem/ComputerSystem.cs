@@ -11,7 +11,7 @@ namespace ComputerManagementSystem
         public DateTime LastUpdated { get; set; }
         public string Motherboard { get; set; }
         public string GPU { get; set; }
-        public int RAM { get; set; } // RAM in MB
-        public int Storage { get; set; } // Storage in GB
+        public int RAM { get; set; }
+        public int Storage { get; set; }
     }
 }

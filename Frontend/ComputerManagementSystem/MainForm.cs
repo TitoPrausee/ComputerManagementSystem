@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using Npgsql; // Verwenden Sie Npgsql für PostgreSQL
 using ComputerManagementSystem;
 
 namespace ComputerManagementSystem
@@ -25,8 +25,8 @@ namespace ComputerManagementSystem
         {
             try
             {
-                // Stelle sicher, dass die Liste korrekt deklariert ist
-                List<ComputerSystem> systems = dbOperations.GetComputerSystems();
+                // Stelle sicher, dass die richtige Klasse verwendet wird
+                List<ComputerManagementSystem.ComputerSystem> systems = dbOperations.GetComputerSystems();
                 listViewComputerSystems.Items.Clear(); // Clear existing items
 
                 foreach (var system in systems)

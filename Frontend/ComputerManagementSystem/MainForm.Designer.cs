@@ -29,75 +29,89 @@
         private void InitializeComponent()
         {
             this.listViewComputerSystems = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnCpuName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnCpuProcessorId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHddSerialNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHddCapacity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHddType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnRamSerialNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnRamSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnMotherboardSerial = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnGpuName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnMonitorPort = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listViewComputerSystems
             // 
             this.listViewComputerSystems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
+            this.columnCpuName,
+            this.columnCpuProcessorId,
+            this.columnHddSerialNumber,
+            this.columnHddCapacity,
+            this.columnHddType,
+            this.columnRamSerialNumber,
+            this.columnRamSize,
+            this.columnMotherboardSerial,
+            this.columnGpuName,
+            this.columnMonitorPort});
             this.listViewComputerSystems.HideSelection = false;
             this.listViewComputerSystems.Location = new System.Drawing.Point(12, 12);
             this.listViewComputerSystems.Name = "listViewComputerSystems";
-            this.listViewComputerSystems.Size = new System.Drawing.Size(776, 426);
+            this.listViewComputerSystems.Size = new System.Drawing.Size(800, 426);
             this.listViewComputerSystems.TabIndex = 0;
             this.listViewComputerSystems.UseCompatibleStateImageBehavior = false;
             this.listViewComputerSystems.View = System.Windows.Forms.View.Details;
             this.listViewComputerSystems.SelectedIndexChanged += new System.EventHandler(this.listViewComputerSystems_SelectedIndexChanged);
             // 
-            // columnHeader1
+            // columnCpuName
             // 
-            this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 100;
+            this.columnCpuName.Text = "CPU Name";
+            this.columnCpuName.Width = 150;
             // 
-            // columnHeader2
+            // columnCpuProcessorId
             // 
-            this.columnHeader2.Text = "IP-Adresse";
-            this.columnHeader2.Width = 100;
+            this.columnCpuProcessorId.Text = "CPU Processor ID";
+            this.columnCpuProcessorId.Width = 150;
             // 
-            // columnHeader3
+            // columnHddSerialNumber
             // 
-            this.columnHeader3.Text = "Betriebssystem";
-            this.columnHeader3.Width = 100;
+            this.columnHddSerialNumber.Text = "HDD Serial Number";
+            this.columnHddSerialNumber.Width = 150;
             // 
-            // columnHeader4
+            // columnHddCapacity
             // 
-            this.columnHeader4.Text = "Letzte Aktualisierung";
-            this.columnHeader4.Width = 100;
+            this.columnHddCapacity.Text = "HDD Capacity";
+            this.columnHddCapacity.Width = 100;
             // 
-            // columnHeader5
+            // columnHddType
             // 
-            this.columnHeader5.Text = "Motherboard";
-            this.columnHeader5.Width = 100;
+            this.columnHddType.Text = "HDD Type";
+            this.columnHddType.Width = 100;
             // 
-            // columnHeader6
+            // columnRamSerialNumber
             // 
-            this.columnHeader6.Text = "GPU";
-            this.columnHeader6.Width = 100;
+            this.columnRamSerialNumber.Text = "RAM Serial Number";
+            this.columnRamSerialNumber.Width = 150;
             // 
-            // columnHeader7
+            // columnRamSize
             // 
-            this.columnHeader7.Text = "RAM (MB)";
-            this.columnHeader7.Width = 100;
+            this.columnRamSize.Text = "RAM Size";
+            this.columnRamSize.Width = 100;
             // 
-            // columnHeader8
+            // columnMotherboardSerial
             // 
-            this.columnHeader8.Text = "Speicher (GB)";
-            this.columnHeader8.Width = 100;
+            this.columnMotherboardSerial.Text = "Motherboard Serial";
+            this.columnMotherboardSerial.Width = 150;
+            // 
+            // columnGpuName
+            // 
+            this.columnGpuName.Text = "GPU Name";
+            this.columnGpuName.Width = 150;
+            // // 
+            // columnMonitorPort
+            // 
+            this.columnMonitorPort.Text = "Monitor Port";
+            this.columnMonitorPort.Width = 100;
             // 
             // MainForm
             // 
@@ -106,22 +120,23 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.listViewComputerSystems);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Computer Management System";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
-
         }
 
         #endregion
 
         private System.Windows.Forms.ListView listViewComputerSystems;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnCpuName;
+        private System.Windows.Forms.ColumnHeader columnCpuProcessorId;
+        private System.Windows.Forms.ColumnHeader columnHddSerialNumber;
+        private System.Windows.Forms.ColumnHeader columnHddCapacity;
+        private System.Windows.Forms.ColumnHeader columnHddType;
+        private System.Windows.Forms.ColumnHeader columnRamSerialNumber;
+        private System.Windows.Forms.ColumnHeader columnRamSize;
+        private System.Windows.Forms.ColumnHeader columnMotherboardSerial;
+        private System.Windows.Forms.ColumnHeader columnGpuName;
+        private System.Windows.Forms.ColumnHeader columnMonitorPort;
     }
 }
