@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using ComputerManagementSystem;
 
 namespace ComputerManagementSystem
 {
@@ -24,6 +25,7 @@ namespace ComputerManagementSystem
         {
             try
             {
+                // Stelle sicher, dass die Liste korrekt deklariert ist
                 List<ComputerSystem> systems = dbOperations.GetComputerSystems();
                 listViewComputerSystems.Items.Clear(); // Clear existing items
 
@@ -44,6 +46,11 @@ namespace ComputerManagementSystem
             {
                 MessageBox.Show("Fehler beim Laden der Daten: " + ex.Message);
             }
+        }
+
+        private void listViewComputerSystems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Event-Handler für die Auswahländerung im ListView
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class DatabaseOperations
 {
     // Korrigierte Verbindungszeichenfolge für PostgreSQL
-    private string connectionString = "Host=217.160.76.103;Port=5432;Database=jomi;Username=jomi;Password=your_password;";
+    private string connectionString = "Host=217.160.76.103;Port=5432;Database=jomi;Username=jomi;Password=init123$;";
 
     // Methode zum Abrufen von ComputerSystemen
     public List<ComputerSystem> GetComputerSystems()
