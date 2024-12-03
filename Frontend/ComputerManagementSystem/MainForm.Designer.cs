@@ -1,16 +1,11 @@
-﻿namespace ComputerManagementSystem
+﻿using System;
+
+namespace ComputerManagementSystem
 {
     partial class MainForm
     {
-        /// <summary>
-        /// Erforderliche Designervariable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Verwendete Ressourcen bereinigen.
-        /// </summary>
-        /// <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,25 +15,20 @@
             base.Dispose(disposing);
         }
 
-        #region Vom Windows Form-Designer generierter Code
-
-        /// <summary>
-        /// Erforderliche Methode für die Designerunterstützung.
-        /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
-        /// </summary>
         private void InitializeComponent()
         {
             this.listViewComputerSystems = new System.Windows.Forms.ListView();
-            this.columnCpuName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnCpuProcessorId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHddSerialNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHddCapacity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHddType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnRamSerialNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnRamSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnMotherboardSerial = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnGpuName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnMonitorPort = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnCpuName = new System.Windows.Forms.ColumnHeader();
+            this.columnCpuProcessorId = new System.Windows.Forms.ColumnHeader();
+            this.columnHddSerialNumber = new System.Windows.Forms.ColumnHeader();
+            this.columnHddCapacity = new System.Windows.Forms.ColumnHeader();
+            this.columnHddType = new System.Windows.Forms.ColumnHeader();
+            this.columnRamSerialNumber = new System.Windows.Forms.ColumnHeader();
+            this.columnRamSize = new System.Windows.Forms.ColumnHeader();
+            this.columnMotherboardSerial = new System.Windows.Forms.ColumnHeader();
+            this.columnGpuName = new System.Windows.Forms.ColumnHeader();
+            this.columnMonitorPort = new System.Windows.Forms.ColumnHeader();
+            this.btnLoadData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewComputerSystems
@@ -54,10 +44,11 @@
             this.columnMotherboardSerial,
             this.columnGpuName,
             this.columnMonitorPort});
-            this.listViewComputerSystems.HideSelection = false;
+            this.listViewComputerSystems.FullRowSelect = true;
+            this.listViewComputerSystems.GridLines = true;
             this.listViewComputerSystems.Location = new System.Drawing.Point(12, 12);
             this.listViewComputerSystems.Name = "listViewComputerSystems";
-            this.listViewComputerSystems.Size = new System.Drawing.Size(800, 426);
+            this.listViewComputerSystems.Size = new System.Drawing.Size(800, 400);
             this.listViewComputerSystems.TabIndex = 0;
             this.listViewComputerSystems.UseCompatibleStateImageBehavior = false;
             this.listViewComputerSystems.View = System.Windows.Forms.View.Details;
@@ -66,7 +57,7 @@
             // columnCpuName
             // 
             this.columnCpuName.Text = "CPU Name";
-            this.columnCpuName.Width = 150;
+            this.columnCpuName.Width = 120;
             // 
             // columnCpuProcessorId
             // 
@@ -81,7 +72,7 @@
             // columnHddCapacity
             // 
             this.columnHddCapacity.Text = "HDD Capacity";
-            this.columnHddCapacity.Width = 100;
+            this.columnHddCapacity.Width = 120;
             // 
             // columnHddType
             // 
@@ -106,26 +97,36 @@
             // columnGpuName
             // 
             this.columnGpuName.Text = "GPU Name";
-            this.columnGpuName.Width = 150;
-            // // 
+            this.columnGpuName.Width = 120;
+            // 
             // columnMonitorPort
             // 
             this.columnMonitorPort.Text = "Monitor Port";
             this.columnMonitorPort.Width = 100;
             // 
-            // MainForm
+            // btnLoadData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.btnLoadData.Location = new System.Drawing.Point(12, 420);
+            this.btnLoadData.Name = "btnLoadData";
+            this.btnLoadData.Size = new System.Drawing.Size(120, 30);
+            this.btnLoadData.TabIndex = 1;
+            this.btnLoadData.Text = "Daten Laden";
+            this.btnLoadData.UseVisualStyleBackColor = true;
+            this.btnLoadData.Click += new System.EventHandler(this.btnLoadData_Click);
+            // 
+            // MainForm
+
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(824, 461);
+            this.Controls.Add(this.btnLoadData);
             this.Controls.Add(this.listViewComputerSystems);
             this.Name = "MainForm";
             this.Text = "Computer Management System";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
         }
-
-        #endregion
 
         private System.Windows.Forms.ListView listViewComputerSystems;
         private System.Windows.Forms.ColumnHeader columnCpuName;
@@ -138,5 +139,6 @@
         private System.Windows.Forms.ColumnHeader columnMotherboardSerial;
         private System.Windows.Forms.ColumnHeader columnGpuName;
         private System.Windows.Forms.ColumnHeader columnMonitorPort;
+        private System.Windows.Forms.Button btnLoadData;
     }
 }
