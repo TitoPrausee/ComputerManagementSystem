@@ -93,7 +93,6 @@ C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\ComputerManagemen
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\ComputerManagementSystem\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.csproj.AssemblyReference.cache
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.csproj.SuggestedBindingRedirects.cache
-C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.LoginForm.resources
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.MainForm.resources
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.Properties.Resources.resources
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.csproj.GenerateResource.cache

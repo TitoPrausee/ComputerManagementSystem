@@ -1,4 +1,5 @@
-﻿using Npgsql; // Verwenden Sie Npgsql für PostgreSQL
+﻿// DatabaseOperations.cs
+using Npgsql; // Verwenden Sie Npgsql für PostgreSQL
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -13,32 +14,23 @@ namespace ComputerManagementSystem
         public List<ComputerSystem> GetHardwareInfo()
         {
             List<ComputerSystem> systems = new List<ComputerSystem>();
-            string query = @"
-            SELECT 
-                cpu.cpu_name, 
-                cpu.cpu_processor_id::text,  -- Konvertiere in String
-                hdd.hdd_serial_number::text,  -- Konvertiere in String
-                hdd.hdd_capacity::text,        -- Konvertiere in String
-                hdd.hdd_type, 
-                ram.ram_serial_number::text,   -- Konvertiere in String
-                ram.ram_size::text,            -- Konvertiere in String
-                motherboard.motherboard_serial::text,  -- Konvertiere in String
-                gpu.gpu_name, 
-                monitor.monitor_port 
-            FROM 
-                ComputerManagement.hardware_info AS hw
-            JOIN 
-                ComputerManagement.cpu AS cpu ON hw.cpu_processor_id = cpu.cpu_processor_id
-            JOIN 
-                ComputerManagement.hdd AS hdd ON hw.hdd_serial_number = hdd.hdd_serial_number
-            JOIN 
-                ComputerManagement.ram AS ram ON hw.ram_serial_number = ram.ram_serial_number
-            JOIN 
-                ComputerManagement.motherboard AS motherboard ON hw.motherboard_serial = motherboard.motherboard_serial
-            JOIN 
-                ComputerManagement.gpu AS gpu ON hw.id = gpu.hardware_info_id
-            JOIN 
-                ComputerManagement.monitor AS monitor ON hw.id = monitor.hardware_info_id;";
+            string query = @"SELECT cpu.cpu_name AS CpuName, 
+                                    cpu.cpu_processor_id::text AS CpuProcessorId, 
+                                    hdd.hdd_serial_number::text AS HddSerialNumber, 
+                                    hdd.hdd_capacity AS HddCapacity, 
+                                    hdd.hdd_type AS HddType, 
+                                    ram.ram_serial_number::text AS RamSerialNumber, 
+                                    ram.ram_size AS RamSize, 
+                                    motherboard.motherboard_serial::text AS MotherboardSerial, 
+                                    gpu.gpu_name AS GpuName, 
+                                    monitor.monitor_port AS MonitorPort 
+                             FROM ComputerManagement.hardware_info AS hw 
+                             JOIN ComputerManagement.cpu AS cpu ON hw.cpu_processor_id = cpu.cpu_processor_id 
+                             JOIN ComputerManagement.hdd AS hdd ON hw.hdd_serial_number = hdd.hdd_serial_number 
+                             JOIN ComputerManagement.ram AS ram ON hw.ram_serial_number = ram.ram_serial_number 
+                             JOIN ComputerManagement.motherboard AS motherboard ON hw.id = motherboard.hardware_info_id 
+                             JOIN ComputerManagement.gpu AS gpu ON hw.id = gpu.hardware_info_id 
+                             JOIN ComputerManagement.monitor AS monitor ON hw.id = monitor.hardware_info_id;";
 
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
@@ -51,20 +43,38 @@ namespace ComputerManagementSystem
                         {
                             while (reader.Read())
                             {
-                                ComputerSystem system = new ComputerSystem
+                                try
                                 {
-                                    CpuName = reader.GetString(0),
-                                    CpuProcessorId = reader.GetString(1), // Hier als String
-                                    HddSerialNumber = reader.GetString(2), // Hier als String
-                                    HddCapacity = reader.GetString(3), // Hier als String
-                                    HddType = reader.GetString(4),
-                                    RamSerialNumber = reader.GetString(5), // Hier als String
-                                    RamSize = reader.GetString(6), // Hier als String
-                                    MotherboardSerial = reader.GetString(7), // Hier als String
-                                    GpuName = reader.GetString(8),
-                                    MonitorPort = reader.GetString(9)
-                                };
-                                systems.Add(system);
+                                    string cpuName = reader.GetString(0);
+                                    string cpuProcessorId = reader.GetString(1);
+                                    string hddSerialNumber = reader.GetString(2);
+                                    int hddCapacity = reader.GetInt32(3);
+                                    string hddType = reader.GetString(4);
+                                    string ramSerialNumber = reader.GetString(5);
+                                    int ramSize = reader.GetInt32(6);
+                                    string motherboardSerial = reader.GetString(7);
+                                    string gpuName = reader.GetString(8);
+                                    string monitorPort = reader.GetString(9);
+
+                                    ComputerSystem system = new ComputerSystem
+                                    {
+                                        CpuName = cpuName,
+                                        CpuProcessorId = cpuProcessorId,
+                                        HddSerialNumber = hddSerialNumber,
+                                        HddCapacity = hddCapacity,
+                                        HddType = hddType,
+                                        RamSerialNumber = ramSerialNumber,
+                                        RamSize = ramSize,
+                                        MotherboardSerial = motherboardSerial,
+                                        GpuName = gpuName,
+                                        MonitorPort = monitorPort
+                                    };
+                                    systems.Add(system);
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show($"Fehler beim Lesen der Daten: {ex.Message}", "Lesefehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
                         }
                     }
@@ -72,54 +82,14 @@ namespace ComputerManagementSystem
                 }
                 catch (NpgsqlException ex)
                 {
-                    MessageBox.Show("Fehler beim Abrufen der Daten: " + ex.Message, "Datenbankfehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Fehler beim Abrufen der Daten: {ex.Message}", "Datenbankfehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Allgemeiner Fehler: " + ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Allgemeiner Fehler: {ex.Message}", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
             return systems;
         }
-
-        // Methode zur Authentifizierung eines Benutzers
-        public User AuthenticateUser(string username, string password)
-        {
-            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = "SELECT Id, Username FROM users WHERE username = @username AND password = @password";
-
-                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@username", username);
-                    command.Parameters.AddWithValue("@password", password);
-
-                    using (NpgsqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            return new User
-                            {
-                                Id = reader.GetInt32(0),
-                                Username = reader.GetString(1)
-                            };
-                        }
-                        else
-                        {
-                            return null; // Benutzer nicht gefunden
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    // Benutzerklasse zur Speicherung der Benutzerdaten
-    public class User
-    {
-        public int Id { get; set; }
-        public string Username { get; set; }
     }
 }

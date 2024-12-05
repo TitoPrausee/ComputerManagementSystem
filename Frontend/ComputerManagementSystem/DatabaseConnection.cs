@@ -9,7 +9,7 @@ public class DatabaseConnection
     public DatabaseConnection(string server, string database, string userId, string password)
     {
         // Erstellen des Connection Strings
-        connectionString = $"Server={server};Database={database};User  Id={userId};Password={password};";
+        connectionString = $"Server={server};Database={database};User Id={userId};Password={password};";
         connection = new SqlConnection(connectionString);
     }
 
@@ -18,11 +18,11 @@ public class DatabaseConnection
         try
         {
             connection.Open();
-            Console.WriteLine("Verbindung zur Datenbank erfolgreich hergestellt.");
+            Console.WriteLine("Verbindung zur Datenbank erfolgreich.");
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            Console.WriteLine($"Fehler beim Öffnen der Verbindung: {ex.Message}");
+            Console.WriteLine("Fehler beim Öffnen der Verbindung.");
         }
     }
 
@@ -36,9 +36,9 @@ public class DatabaseConnection
                 Console.WriteLine("Verbindung zur Datenbank geschlossen.");
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            Console.WriteLine($"Fehler beim Schließen der Verbindung: {ex.Message}");
+            Console.WriteLine("Fehler beim Schließen der Verbindung.");
         }
     }
 

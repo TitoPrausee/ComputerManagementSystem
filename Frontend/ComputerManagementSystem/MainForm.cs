@@ -35,10 +35,10 @@ namespace ComputerManagementSystem
                     ListViewItem item = new ListViewItem(system.CpuName);
                     item.SubItems.Add(system.CpuProcessorId);
                     item.SubItems.Add(system.HddSerialNumber);
-                    item.SubItems.Add(system.HddCapacity);
+                    item.SubItems.Add(system.HddCapacity.ToString()); // Konvertieren in String
                     item.SubItems.Add(system.HddType);
                     item.SubItems.Add(system.RamSerialNumber);
-                    item.SubItems.Add(system.RamSize);
+                    item.SubItems.Add(system.RamSize.ToString()); // Konvertieren in String
                     item.SubItems.Add(system.MotherboardSerial);
                     item.SubItems.Add(system.GpuName);
                     item.SubItems.Add(system.MonitorPort);
