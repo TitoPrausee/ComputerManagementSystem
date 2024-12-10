@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Npgsql; // Verwenden Sie Npgsql für PostgreSQL
+using Npgsql; 
 using ComputerManagementSystem;
 
 namespace ComputerManagementSystem

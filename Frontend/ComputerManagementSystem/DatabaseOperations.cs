@@ -14,23 +14,30 @@ namespace ComputerManagementSystem
         public List<ComputerSystem> GetHardwareInfo()
         {
             List<ComputerSystem> systems = new List<ComputerSystem>();
-            string query = @"SELECT cpu.cpu_name AS CpuName, 
-                                    cpu.cpu_processor_id::text AS CpuProcessorId, 
-                                    hdd.hdd_serial_number::text AS HddSerialNumber, 
-                                    hdd.hdd_capacity AS HddCapacity, 
-                                    hdd.hdd_type AS HddType, 
-                                    ram.ram_serial_number::text AS RamSerialNumber, 
-                                    ram.ram_size AS RamSize, 
-                                    motherboard.motherboard_serial::text AS MotherboardSerial, 
-                                    gpu.gpu_name AS GpuName, 
-                                    monitor.monitor_port AS MonitorPort 
-                             FROM ComputerManagement.hardware_info AS hw 
-                             JOIN ComputerManagement.cpu AS cpu ON hw.cpu_processor_id = cpu.cpu_processor_id 
-                             JOIN ComputerManagement.hdd AS hdd ON hw.hdd_serial_number = hdd.hdd_serial_number 
-                             JOIN ComputerManagement.ram AS ram ON hw.ram_serial_number = ram.ram_serial_number 
-                             JOIN ComputerManagement.motherboard AS motherboard ON hw.id = motherboard.hardware_info_id 
-                             JOIN ComputerManagement.gpu AS gpu ON hw.id = gpu.hardware_info_id 
-                             JOIN ComputerManagement.monitor AS monitor ON hw.id = monitor.hardware_info_id;";
+            string query = @"SELECT cpu.cpu_name                         AS CpuName,
+       cpu.cpu_processor_id::text           AS CpuProcessorId,
+       disk.hdd_serial_number::text          AS HddSerialNumber,
+       disk.hdd_capacity                     AS HddCapacity,
+       disk.hdd_type                         AS HddType,
+       ram.ram_serial_number::text          AS RamSerialNumber,
+       ram.ram_size                         AS RamSize,
+       motherboard.motherboard_serial::text AS MotherboardSerial,
+       gpu.gpu_name                         AS GpuName,
+       monitor.monitor_port                 AS MonitorPort
+FROM ComputerManagement.hardware_info AS hw
+         LEFT JOIN 
+    computermanagement.disk disk on hw.id = disk.hardware_info_id
+         LEFT JOIN
+     ComputerManagement.cpu AS cpu ON hw.cpu_id = cpu.id
+         LEFT JOIN
+     ComputerManagement.ram AS ram ON hw.id = ram.hardware_info_id
+         LEFT JOIN
+     ComputerManagement.motherboard AS motherboard ON hw.motherboard_id = motherboard.id
+         LEFT JOIN
+     ComputerManagement.gpu AS gpu ON hw.gpu_id = gpu.id
+         LEFT JOIN
+     ComputerManagement.monitor AS monitor ON hw.id = monitor.hardware_info_id;
+";
 
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
