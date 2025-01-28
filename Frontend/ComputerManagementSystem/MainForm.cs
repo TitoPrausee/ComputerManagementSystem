@@ -1,19 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Npgsql; 
+using Npgsql;
 using ComputerManagementSystem;
+using ComputerManagementSystem.Forms; // Add this using directive
 
 namespace ComputerManagementSystem
 {
     public partial class MainForm : Form
     {
         private DatabaseOperations dbOperations;
+        private PictureBox pictureBox; // PictureBox-Variable hinzufügen
 
         public MainForm()
         {
             InitializeComponent();
             dbOperations = new DatabaseOperations();
+            pictureBox = new PictureBox(); // PictureBox initialisieren
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -72,6 +76,23 @@ namespace ComputerManagementSystem
                 // Hier kannst du weitere Aktionen basierend auf der Auswahl durchführen
                 MessageBox.Show($"Ausgewähltes System: {cpuName}", "Auswahl", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnLoadData_Click_1(object sender, EventArgs e)
+        {
+            LoadComputerSystems();
+        }
+
+        private void openAddScrean_Click(object sender, EventArgs e)
+        {
+            New newForm = new New();
+            newForm.Show();
+            this.Hide();
         }
     }
 }

@@ -92,7 +92,6 @@ C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\ComputerManagemen
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\ComputerManagementSystem\bin\Debug\Dapper.xml
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\ComputerManagementSystem\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.csproj.AssemblyReference.cache
-C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.csproj.SuggestedBindingRedirects.cache
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.MainForm.resources
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.Properties.Resources.resources
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.csproj.GenerateResource.cache
@@ -152,4 +151,6 @@ C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\Computer
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\bin\Debug\System.Threading.Channels.xml
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\bin\Debug\System.ValueTuple.xml
-C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.csproj.CopyComplete
+C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\Computer.6127FAAC.Up2Date
+C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\bin\Debug\Guna.UI2.dll
+C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.Forms.New.resources
