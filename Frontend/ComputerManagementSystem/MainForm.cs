@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Npgsql;
 using ComputerManagementSystem;
-using ComputerManagementSystem.Forms; // Add this using directive
+
 
 namespace ComputerManagementSystem
 {
@@ -60,6 +60,9 @@ namespace ComputerManagementSystem
                 MessageBox.Show("Allgemeiner Fehler: " + ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
 
         private void btnLoadData_Click(object sender, EventArgs e)
         {

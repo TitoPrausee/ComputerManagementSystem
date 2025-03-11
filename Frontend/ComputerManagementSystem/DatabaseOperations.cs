@@ -18,89 +18,39 @@ namespace ComputerManagementSystem
         public List<ComputerSystem> GetHardwareInfo()
         {
             List<ComputerSystem> systems = new List<ComputerSystem>();
-            string query = @"SELECT cpu.cpu_name                         AS CpuName,
-       cpu.cpu_processor_id::text           AS CpuProcessorId,
-       disk.hdd_serial_number::text          AS HddSerialNumber,
-       disk.hdd_capacity                     AS HddCapacity,
-       disk.hdd_type                         AS HddType,
-       ram.ram_serial_number::text          AS RamSerialNumber,
-       ram.ram_size                         AS RamSize,
-       motherboard.motherboard_serial::text AS MotherboardSerial,
-       gpu.gpu_name                         AS GpuName,
-       monitor.monitor_port                 AS MonitorPort
-FROM ComputerManagement.hardware_info AS hw
-         LEFT JOIN 
-    computermanagement.disk disk on hw.id = disk.hardware_info_id
-         LEFT JOIN
-     ComputerManagement.cpu AS cpu ON hw.cpu_id = cpu.id
-         LEFT JOIN
-     ComputerManagement.ram AS ram ON hw.id = ram.hardware_info_id
-         LEFT JOIN
-     ComputerManagement.motherboard AS motherboard ON hw.motherboard_id = motherboard.id
-         LEFT JOIN
-     ComputerManagement.gpu AS gpu ON hw.gpu_id = gpu.id
-         LEFT JOIN
-     ComputerManagement.monitor AS monitor ON hw.id = monitor.hardware_info_id;";
+            string query = "SELECT cpu_name, cpu_processor_id, hdd_serial_number, hdd_capacity, hdd_type, ram_serial_number, ram_size, motherboard_serial, gpu_name, monitor_port FROM hardware_info";
 
-            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {
-                try
+                conn.Open();
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
-                    connection.Open();
-                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
                     {
-                        using (NpgsqlDataReader reader = command.ExecuteReader())
+                        while (reader.Read())
                         {
-                            while (reader.Read())
+                            ComputerSystem system = new ComputerSystem
                             {
-                                try
-                                {
-                                    string cpuName = reader.GetString(0);
-                                    string cpuProcessorId = reader.GetString(1);
-                                    string hddSerialNumber = reader.GetString(2);
-                                    int hddCapacity = reader.GetInt32(3);
-                                    string hddType = reader.GetString(4);
-                                    string ramSerialNumber = reader.GetString(5);
-                                    int ramSize = reader.GetInt32(6);
-                                    string motherboardSerial = reader.GetString(7);
-                                    string gpuName = reader.GetString(8);
-                                    string monitorPort = reader.GetString(9);
-
-                                    ComputerSystem system = new ComputerSystem
-                                    {
-                                        CpuName = cpuName,
-                                        CpuProcessorId = cpuProcessorId,
-                                        HddSerialNumber = hddSerialNumber,
-                                        HddCapacity = hddCapacity,
-                                        HddType = hddType,
-                                        RamSerialNumber = ramSerialNumber,
-                                        RamSize = ramSize,
-                                        MotherboardSerial = motherboardSerial,
-                                        GpuName = gpuName,
-                                        MonitorPort = monitorPort
-                                    };
-                                    systems.Add(system);
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show($"Fehler beim Lesen der Daten: {ex.Message}", "Lesefehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
+                                CpuName = reader.GetString(0),
+                                CpuProcessorId = reader.GetString(1),
+                                HddSerialNumber = reader.GetString(2),
+                                HddCapacity = reader.GetInt32(3),
+                                HddType = reader.GetString(4),
+                                RamSerialNumber = reader.GetString(5),
+                                RamSize = reader.GetInt32(6),
+                                MotherboardSerial = reader.GetString(7),
+                                GpuName = reader.GetString(8),
+                                MonitorPort = reader.GetString(9)
+                            };
+                            systems.Add(system);
                         }
                     }
-                    MessageBox.Show("Daten erfolgreich geladen.", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (NpgsqlException ex)
-                {
-                    MessageBox.Show($"Fehler beim Abrufen der Daten: {ex.Message}", "Datenbankfehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Allgemeiner Fehler: {ex.Message}", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             return systems;
         }
+
+
 
         // Methode zum Einfügen eines neuen Motherboards
         public int InsertMotherboard(string motherboardSerial)

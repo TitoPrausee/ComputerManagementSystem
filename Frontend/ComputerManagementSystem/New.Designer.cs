@@ -1,8 +1,10 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Windows.Forms;
 
-namespace ComputerManagementSystem.Forms
+namespace ComputerManagementSystem
 {
-    partial class New
+    partial class New : Form
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -350,6 +352,11 @@ namespace ComputerManagementSystem.Forms
                 txtMonitorPort.Text = "Monitor Port";
                 txtMonitorPort.ForeColor = System.Drawing.Color.Gray;
             }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

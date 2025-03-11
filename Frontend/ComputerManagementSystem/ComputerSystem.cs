@@ -14,3 +14,4 @@ public class ComputerSystem
     public string GpuName { get; set; }
     public string MonitorPort { get; set; }
 }
+

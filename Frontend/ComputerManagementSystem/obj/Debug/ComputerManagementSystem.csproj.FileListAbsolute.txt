@@ -153,4 +153,4 @@ C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\Computer
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\bin\Debug\System.ValueTuple.xml
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\Computer.6127FAAC.Up2Date
 C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\bin\Debug\Guna.UI2.dll
-C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.Forms.New.resources
+C:\Users\Tito Prause\Documents\GitHub\ComputerManagementSystem\Frontend\ComputerManagementSystem\obj\Debug\ComputerManagementSystem.New.resources
