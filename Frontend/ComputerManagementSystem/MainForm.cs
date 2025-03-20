@@ -46,6 +46,9 @@ namespace ComputerManagementSystem
                     item.SubItems.Add(system.MotherboardSerial);
                     item.SubItems.Add(system.GpuName);
                     item.SubItems.Add(system.MonitorPort);
+                    item.SubItems.Add(system.CpuId.ToString()); // CPU-ID hinzufügen
+                    item.SubItems.Add(system.GpuId.ToString()); // GPU-ID hinzufügen
+                    item.SubItems.Add(system.MotherboardId.ToString()); // Motherboard-ID hinzufügen
                     listViewComputerSystems.Items.Add(item);
                 }
 
@@ -60,6 +63,7 @@ namespace ComputerManagementSystem
                 MessageBox.Show("Allgemeiner Fehler: " + ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
 

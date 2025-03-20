@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComputerManagementSystem;
+using System;
 using System.Data.SqlClient;
 
 public class DatabaseConnection
@@ -6,10 +7,10 @@ public class DatabaseConnection
     private string connectionString;
     private SqlConnection connection;
 
-    public DatabaseConnection(string server, string database, string userId, string password)
+    public DatabaseConnection()
     {
-        // Erstellen des Connection Strings
-        connectionString = $"Server={server};Database={database};User Id={userId};Password={password};";
+        // Verwenden der Verbindungszeichenfolge aus DatabaseConfig
+        connectionString = DatabaseConfig.GetConnectionString();
         connection = new SqlConnection(connectionString);
     }
 
@@ -20,9 +21,9 @@ public class DatabaseConnection
             connection.Open();
             Console.WriteLine("Verbindung zur Datenbank erfolgreich.");
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            Console.WriteLine("Fehler beim Öffnen der Verbindung.");
+            Console.WriteLine($"Fehler beim Öffnen der Verbindung: {ex.Message}");
         }
     }
 
@@ -36,9 +37,9 @@ public class DatabaseConnection
                 Console.WriteLine("Verbindung zur Datenbank geschlossen.");
             }
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            Console.WriteLine("Fehler beim Schließen der Verbindung.");
+            Console.WriteLine($"Fehler beim Schließen der Verbindung: {ex.Message}");
         }
     }
 

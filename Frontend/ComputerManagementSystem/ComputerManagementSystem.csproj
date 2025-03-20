@@ -136,6 +136,12 @@
     <Compile Include="DatabaseConfig.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="DatabaseOperations.cs" />
+    <Compile Include="homeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="homeStatus.Designer.cs">
+      <DependentUpon>homeStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="homeStatus.resx">
+      <DependentUpon>homeStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
