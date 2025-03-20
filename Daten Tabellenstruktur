@@ -1,0 +1,15 @@
+Daten Tabellenstruktur: 
+id	integer		NO
+cpu_id	integer		YES
+gpu_id	integer		YES
+motherboard_id	integer		YES
+hdd_type	character varying	50	YES
+ram_serial_number	character varying	255	YES
+ram_size	character varying	50	YES
+cpu_name	character varying	255	YES
+gpu_name	character varying	255	YES
+monitor_port	character varying	50	YES
+motherboard_serial	character varying	255	YES
+cpu_processor_id	character varying	255	YES
+hdd_serial_number	character varying	255	YES
+hdd_capacity	character varying	50	YES
