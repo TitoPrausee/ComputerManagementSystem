@@ -23,3 +23,5 @@ C:\Users\tipr2429\source\repos\ComputerManagement3\ComputerManagement3\bin\Debug
 C:\Users\tipr2429\source\repos\ComputerManagement3\ComputerManagement3\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\tipr2429\source\repos\ComputerManagement3\ComputerManagement3\bin\Debug\net8.0-windows\Npgsql.dll
 C:\Users\tipr2429\source\repos\ComputerManagement3\ComputerManagement3\obj\Debug\net8.0-windows\ComputerManagement3.MAin.resources
+C:\Users\tipr2429\source\repos\ComputerManagement3\ComputerManagement3\obj\Debug\net8.0-windows\ComputerManagement3.Add.resources
+C:\Users\tipr2429\source\repos\ComputerManagement3\ComputerManagement3\obj\Debug\net8.0-windows\ComputerManagement3.AddUser.resources

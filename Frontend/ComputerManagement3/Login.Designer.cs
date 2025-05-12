@@ -185,7 +185,7 @@ namespace ComputerManagement3
             Controls.Add(Name);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Login";
+            this.Text = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             Load += Login_Load;

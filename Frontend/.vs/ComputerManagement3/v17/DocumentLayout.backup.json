@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{B9A04F57-BAB6-423D-A263-20F035FDB4A5}|ComputerManagement3\\ComputerManagement3.csproj|solutionrelative:computermanagement3\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A04F57-BAB6-423D-A263-20F035FDB4A5}|ComputerManagement3\\ComputerManagement3.csproj|c:\\users\\tipr2429\\source\\repos\\computermanagement3\\computermanagement3\\main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9A04F57-BAB6-423D-A263-20F035FDB4A5}|ComputerManagement3\\ComputerManagement3.csproj|solutionrelative:computermanagement3\\main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9A04F57-BAB6-423D-A263-20F035FDB4A5}|ComputerManagement3\\ComputerManagement3.csproj|C:\\Users\\tipr2429\\source\\repos\\ComputerManagement3\\computermanagement3\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B9A04F57-BAB6-423D-A263-20F035FDB4A5}|ComputerManagement3\\ComputerManagement3.csproj|solutionrelative:computermanagement3\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B9A04F57-BAB6-423D-A263-20F035FDB4A5}|ComputerManagement3\\ComputerManagement3.csproj|C:\\Users\\tipr2429\\source\\repos\\ComputerManagement3\\computermanagement3\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B9A04F57-BAB6-423D-A263-20F035FDB4A5}|ComputerManagement3\\ComputerManagement3.csproj|solutionrelative:computermanagement3\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9A04F57-BAB6-423D-A263-20F035FDB4A5}|ComputerManagement3\\ComputerManagement3.csproj|c:\\users\\tipr2429\\source\\repos\\computermanagement3\\computermanagement3\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B9A04F57-BAB6-423D-A263-20F035FDB4A5}|ComputerManagement3\\ComputerManagement3.csproj|solutionrelative:computermanagement3\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B9A04F57-BAB6-423D-A263-20F035FDB4A5}|ComputerManagement3\\ComputerManagement3.csproj|c:\\users\\tipr2429\\source\\repos\\computermanagement3\\computermanagement3\\main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9A04F57-BAB6-423D-A263-20F035FDB4A5}|ComputerManagement3\\ComputerManagement3.csproj|solutionrelative:computermanagement3\\main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B9A04F57-BAB6-423D-A263-20F035FDB4A5}|ComputerManagement3\\ComputerManagement3.csproj|c:\\users\\tipr2429\\source\\repos\\computermanagement3\\computermanagement3\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -64,16 +64,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MAin.Designer.cs",
               "DocumentMoniker": "C:\\Users\\tipr2429\\source\\repos\\ComputerManagement3\\ComputerManagement3\\MAin.Designer.cs",
               "RelativeDocumentMoniker": "ComputerManagement3\\MAin.Designer.cs",
               "ToolTip": "C:\\Users\\tipr2429\\source\\repos\\ComputerManagement3\\ComputerManagement3\\MAin.Designer.cs",
               "RelativeToolTip": "ComputerManagement3\\MAin.Designer.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAswKYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAswN8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T23:11:56.663Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T23:11:56.663Z"
             },
             {
               "$type": "Document",
@@ -96,10 +95,9 @@
               "RelativeDocumentMoniker": "ComputerManagement3\\Login.Designer.cs",
               "ToolTip": "C:\\Users\\tipr2429\\source\\repos\\ComputerManagement3\\ComputerManagement3\\Login.Designer.cs",
               "RelativeToolTip": "ComputerManagement3\\Login.Designer.cs",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAvwKEAAABjAAAAAAAAAA==",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAvwKIAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T22:26:48.359Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T22:26:48.359Z"
             },
             {
               "$type": "Document",
@@ -111,8 +109,7 @@
               "RelativeToolTip": "ComputerManagement3\\ComputerManagement3.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-11T21:49:40.83Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T21:49:40.83Z"
             },
             {
               "$type": "Document",
@@ -124,20 +121,18 @@
               "RelativeToolTip": "ComputerManagement3\\Connector.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAA4wEUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T22:06:33.73Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T22:06:33.73Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Login.cs [Entwurf]",
               "DocumentMoniker": "C:\\Users\\tipr2429\\source\\repos\\ComputerManagement3\\ComputerManagement3\\Login.cs",
               "RelativeDocumentMoniker": "ComputerManagement3\\Login.cs",
               "ToolTip": "C:\\Users\\tipr2429\\source\\repos\\ComputerManagement3\\ComputerManagement3\\Login.cs [Entwurf]",
               "RelativeToolTip": "ComputerManagement3\\Login.cs [Entwurf]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T22:23:20.15Z",
-              "EditorCaption": " [Entwurf]"
+              "WhenOpened": "2025-05-11T22:23:20.15Z"
             },
             {
               "$type": "Document",
@@ -148,8 +143,7 @@
               "ToolTip": "C:\\Users\\tipr2429\\source\\repos\\ComputerManagement3\\ComputerManagement3\\Main.cs [Entwurf]",
               "RelativeToolTip": "ComputerManagement3\\Main.cs [Entwurf]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T22:02:04.494Z",
-              "EditorCaption": " [Entwurf]"
+              "WhenOpened": "2025-05-11T22:02:04.494Z"
             }
           ]
         }

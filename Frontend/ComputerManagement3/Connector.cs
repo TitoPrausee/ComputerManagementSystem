@@ -68,5 +68,24 @@ namespace ComputerManagement3
                 return table;
             }
         }
+        public object ExecuteScalar(string query)
+        {
+            using (var connection = GetConnection())
+            {
+                using (var command = new NpgsqlCommand(query, connection))
+                {
+                    try
+                    {
+                        return command.ExecuteScalar();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Fehler beim Ausführen von ExecuteScalar: {ex.Message}");
+                        throw;
+                    }
+                }
+            }
+        }
+
     }
 }

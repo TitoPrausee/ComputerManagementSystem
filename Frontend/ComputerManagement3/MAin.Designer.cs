@@ -8,6 +8,19 @@ namespace ComputerManagement3
     {
         private System.ComponentModel.IContainer components = null;
 
+        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2Elipse Elipse;
+        private Guna.UI2.WinForms.Guna2Elipse Elipse2;
+        private Guna.UI2.WinForms.Guna2TextBox txtSuche;
+        private Guna.UI2.WinForms.Guna2Button btnSuche;
+        private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private Guna.UI2.WinForms.Guna2Button btnExportCsv;
+        private Guna.UI2.WinForms.Guna2Button btnAddUser; // Neuer Button für Nutzer hinzufügen
+        private Panel panel1;
+        private Guna.UI2.WinForms.Guna2ControlBox Minimize;
+        private Guna.UI2.WinForms.Guna2ControlBox Close;
+        private Guna.UI2.WinForms.Guna2DragControl Drag;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -25,10 +38,16 @@ namespace ComputerManagement3
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -38,9 +57,13 @@ namespace ComputerManagement3
             Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(components);
             txtSuche = new Guna.UI2.WinForms.Guna2TextBox();
             btnSuche = new Guna.UI2.WinForms.Guna2Button();
+            btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            btnExportCsv = new Guna.UI2.WinForms.Guna2Button();
+            btnAddUser = new Guna.UI2.WinForms.Guna2Button();
             panel1 = new Panel();
             Minimize = new Guna.UI2.WinForms.Guna2ControlBox();
             Close = new Guna.UI2.WinForms.Guna2ControlBox();
+            Drag = new Guna.UI2.WinForms.Guna2DragControl(components);
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -110,7 +133,7 @@ namespace ComputerManagement3
             // txtSuche
             // 
             txtSuche.BorderRadius = 15;
-            txtSuche.CustomizableEdges = customizableEdges7;
+            txtSuche.CustomizableEdges = customizableEdges13;
             txtSuche.DefaultText = "";
             txtSuche.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtSuche.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -124,7 +147,7 @@ namespace ComputerManagement3
             txtSuche.Name = "txtSuche";
             txtSuche.PlaceholderText = "z.B: Intel";
             txtSuche.SelectedText = "";
-            txtSuche.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtSuche.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txtSuche.Size = new Size(180, 43);
             txtSuche.TabIndex = 3;
             // 
@@ -132,7 +155,7 @@ namespace ComputerManagement3
             // 
             btnSuche.BorderRadius = 15;
             btnSuche.Cursor = Cursors.Hand;
-            btnSuche.CustomizableEdges = customizableEdges5;
+            btnSuche.CustomizableEdges = customizableEdges11;
             btnSuche.DisabledState.BorderColor = Color.DarkGray;
             btnSuche.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSuche.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -142,11 +165,59 @@ namespace ComputerManagement3
             btnSuche.ForeColor = Color.White;
             btnSuche.Location = new Point(30, 170);
             btnSuche.Name = "btnSuche";
-            btnSuche.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnSuche.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnSuche.Size = new Size(179, 47);
             btnSuche.TabIndex = 4;
             btnSuche.Text = "Suchen";
             btnSuche.Click += btnSuche_Click;
+            // 
+            // btnAdd
+            // 
+            btnAdd.BorderRadius = 15;
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.CustomizableEdges = customizableEdges9;
+            btnAdd.FillColor = Color.Gray;
+            btnAdd.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(30, 223);
+            btnAdd.Name = "btnAdd";
+            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnAdd.Size = new Size(179, 47);
+            btnAdd.TabIndex = 5;
+            btnAdd.Text = "Hinzufügen";
+            btnAdd.Click += BtnAdd_Click;
+            // 
+            // btnExportCsv
+            // 
+            btnExportCsv.BorderRadius = 15;
+            btnExportCsv.Cursor = Cursors.Hand;
+            btnExportCsv.CustomizableEdges = customizableEdges5;
+            btnExportCsv.FillColor = Color.Gray;
+            btnExportCsv.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExportCsv.ForeColor = Color.White;
+            btnExportCsv.Location = new Point(31, 660);
+            btnExportCsv.Name = "btnExportCsv";
+            btnExportCsv.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnExportCsv.Size = new Size(179, 47);
+            btnExportCsv.TabIndex = 6;
+            btnExportCsv.Text = "Exportieren";
+            btnExportCsv.Click += BtnExportCsv_Click;
+            // 
+            // btnAddUser
+            // 
+            btnAddUser.BorderRadius = 15;
+            btnAddUser.Cursor = Cursors.Hand;
+            btnAddUser.CustomizableEdges = customizableEdges7;
+            btnAddUser.FillColor = Color.Gray;
+            btnAddUser.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddUser.ForeColor = Color.White;
+            btnAddUser.Location = new Point(30, 276);
+            btnAddUser.Name = "btnAddUser";
+            btnAddUser.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnAddUser.Size = new Size(179, 47);
+            btnAddUser.TabIndex = 7;
+            btnAddUser.Text = "Nutzer hinzufügen";
+            btnAddUser.Click += BtnAddUser_Click;
             // 
             // panel1
             // 
@@ -158,7 +229,7 @@ namespace ComputerManagement3
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1680, 66);
-            panel1.TabIndex = 5;
+            panel1.TabIndex = 7;
             // 
             // Minimize
             // 
@@ -190,6 +261,13 @@ namespace ComputerManagement3
             Close.ShadowDecoration.CustomizableEdges = customizableEdges4;
             Close.Size = new Size(76, 66);
             Close.TabIndex = 0;
+            Close.Click += Close_Click;
+            // 
+            // Drag
+            // 
+            Drag.DockIndicatorTransparencyValue = 0.6D;
+            Drag.TargetControl = panel1;
+            Drag.UseTransparentDrag = true;
             // 
             // MAin
             // 
@@ -197,6 +275,9 @@ namespace ComputerManagement3
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1680, 747);
             Controls.Add(panel1);
+            Controls.Add(btnExportCsv);
+            Controls.Add(btnAddUser);
+            Controls.Add(btnAdd);
             Controls.Add(btnSuche);
             Controls.Add(txtSuche);
             Controls.Add(guna2DataGridView1);
@@ -210,14 +291,5 @@ namespace ComputerManagement3
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Guna.UI2.WinForms.Guna2Elipse Elipse;
-        private Guna.UI2.WinForms.Guna2Elipse Elipse2;
-        private Guna.UI2.WinForms.Guna2TextBox txtSuche;
-        private Guna.UI2.WinForms.Guna2Button btnSuche;
-        private Panel panel1;
-        private Guna.UI2.WinForms.Guna2ControlBox Minimize;
-        private Guna.UI2.WinForms.Guna2ControlBox Close;
     }
 }
